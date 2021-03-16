@@ -12,7 +12,7 @@ const server = new ApolloServer({ typeDefs,resolvers, subscriptions: { path: '40
 }) });
 
 // The `listen` method launches a web server.
-server.listen(4001).then(({ url }) => {
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
 
